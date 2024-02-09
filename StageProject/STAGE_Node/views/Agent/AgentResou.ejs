@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolues</title>
+    <link rel="icon" href="../logo.svg">
+    <link rel="stylesheet" href="/css/AgentHome.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/0c6c59d6fe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+    <style>
+        .aa1VUE{
+          width: 100%;
+          height:100%;
+          background-color: rgba(0, 0, 0, 0.288);
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          top: 0%;
+          left: 0%;
+        }
+        .aa1VUE1{
+          width: 60%;
+          height: 60%;
+          background-color: #fff;
+          border-radius: 20px;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+        .aa1VUE_01{
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .aa1VUE_01 h3 {
+          font-size: 18px;
+          font-weight: 600;
+          color: #068843;
+          letter-spacing: 2px;
+        }
+        .aa1VUE_01  i {
+          font-size: 20px;
+          font-weight: 700;
+          cursor: pointer;
+        }
+        .aa1VUE{
+          display: none;
+        }
+        .aa1VUE.activeVue{
+          display: flex;
+        }
+    </style>
+</head>
+<body>
+    <section id="mainHomeAgent">
+        <header>
+            <div class="mainHomeAgent_header">
+                <img src="/logo.svg" alt="" srcset="" width="65px">
+                <nav>
+                    <a href="/Agent/">Listes rec</a>
+                    <a href="/Agent/Envoyer" >Ajouter rec</a>
+                    <a href="/Agent/Resolues" class="activelinkAgent"> Resolues rec</a>
+                </nav>
+                <a href="/logout" class="deconnexionBTN_Agent">Deconnexion</a>
+
+            </div>
+        </header>
+        <div class="mainHomeAgent_hidenBox"></div>
+        <section class="mainHomeAgent_boxAll">
+            <!-- <div class="mainHomeAgent_boxAll_00">
+                <h2>Liste des réclamations</h2>
+
+                <div class="app2AFF01tab">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-wrap">
+                                <table class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th>Numéro de plainte</th>
+                                      <th>Type de plainte</th>
+                                      <th>Status</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th scope="row">1001</th>
+                                      <td>Mark Otto</td>
+                                      <td><a href="#" class="btn btn-success">traiter</a></td>
+                                    </tr>
+        
+                                    <tr>
+                                      <th scope="row">1001</th>
+                                      <td>Mark Otto</td>
+                                      <td><a href="#" class="btn btn-warning" onclick="openBo()">Ouvrir</a></td>
+                                    </tr>
+        
+                                    <tr>
+                                      <th scope="row">1001</th>
+                                      <td>Mark Otto</td>
+                                      <td><a href="#" class="btn btn-danger">En attente</a></td>
+                                    </tr>
+        
+                                    <tr>
+                                      <th scope="row">1001</th>
+                                      <td>Mark Otto</td>
+                                      <td><a href="#" class="btn btn-success">traiter</a></td>
+                                    </tr>
+        
+                                     <tr>
+                                      <th scope="row">1001</th>
+                                      <td>Mark Otto</td>
+                                      <td><a href="#" class="btn btn-danger">En attente</a></td>
+                                    </tr>
+        
+                                     <tr>
+                                      <th scope="row">1001</th>
+                                      <td>Mark Otto</td>
+                                      <td><a href="#" class="btn btn-warning" onclick="openBo()">Ouvrir</a></td>
+        
+                                       <tr>
+                                      <th scope="row">1001</th>
+                                      <td>Mark Otto</td>
+                                      <td><a href="#" class="btn btn-warning" onclick="openBo()">Ouvrir</a></td>
+                                    </tr>
+        
+                                    <tr>
+                                      <th scope="row">1001</th>
+                                      <td>Mark Otto</td>
+                                      <td><a href="#" class="btn btn-success">traiter</a></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </section>
+  </section>
+    <!-- <div class="aa1VUE">
+        <div class="aa1VUE1">
+            <div class="aa1VUE_01">
+                <h3>VUE</h3>
+                <i class="uil uil-multiply" onclick="openIcon()"></i>
+            </div>
+        </div>
+    </div>
+    <script src="/js/js.js"></script>
+    <script>
+        const vueBox=document.querySelector('.aa1VUE');
+        const iconVueBox=document.querySelector('.aa1VUE .aa1VUE1 .aa1VUE_01 i');
+        const openBo=()=>{
+          vueBox.classList.add('activeVue');
+        }
+        const openIcon=()=>{
+          vueBox.classList.remove('activeVue');
+        }
+    </script> -->
+</body>
+</html>

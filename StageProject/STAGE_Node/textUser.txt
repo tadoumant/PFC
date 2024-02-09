@@ -1,0 +1,5 @@
+numberCompte : AG00001
+password : AG00001Pass
+typeCompte : Agent
+activation : Active
+statusCompte : hors ligne

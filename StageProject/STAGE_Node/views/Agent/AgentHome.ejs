@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listes</title>
+    <link rel="icon" href="../logo.svg">
+    <link rel="stylesheet" href="/css/AgentHome.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/0c6c59d6fe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+    <style>
+        .aa1VUE{
+          width: 100%;
+          height:100%;
+          background-color: rgba(0, 0, 0, 0.288);
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          top: 0%;
+          left: 0%;
+        }
+        .aa1VUE1{
+          width: 60%;
+          height: 60%;
+          background-color: #fff;
+          border-radius: 20px;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+        .aa1VUE_01{
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .aa1VUE_01 h3 {
+          font-size: 18px;
+          font-weight: 600;
+          color: #068843;
+          letter-spacing: 2px;
+        }
+        .aa1VUE_01  i {
+          font-size: 20px;
+          font-weight: 700;
+          cursor: pointer;
+        }
+        .aa1VUE{
+          display: none;
+        }
+        .aa1VUE.activeVue{
+          display: flex;
+        }
+
+
+        .aa1VUE_01{
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+        .aa1VUE_01__01{
+          width: 100%;
+          display: flex;flex-direction: row;
+          justify-content: space-between;
+        }
+        .aa1VUE_01__01 h3{
+          font-size: 18px;
+          font-weight: 600;
+          letter-spacing: 2px;
+          color: rgb(229, 134, 17);
+        }
+        .aa1VUE_01__02{
+          background-color: rgba(239, 239, 239, 0.489);
+          width: 100%;
+          height: 100%;
+          border-top-left-radius: 30px;
+          border-bottom-right-radius: 30px;
+          box-shadow: 0px 0px 6px 0px #70707070;
+        }
+        
+        .aa1VUE{
+          width: 100%;
+          height:100%;
+          background-color: rgba(0, 0, 0, 0.288);
+          position: absolute;
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          top: 0%;
+          left: 0%;
+        }
+        .aa1VUE1{
+          width: 60%;
+          height: 60%;
+          background-color: #fff;
+          border-radius: 20px;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+        .aa1VUE_01__02{
+          width: 100%;
+          height: 100%;
+          display: flex;flex-direction: column;
+          gap: 20px;
+        }
+        .aa1VUE_01__02 .aa1VUE_01__02_01{
+          padding: 20px;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(239, 239, 239, 0.489);
+          border-top-left-radius: 30px;
+          box-shadow: 0px 0px 6px 0px #70707070;
+          display: flex;flex-direction: column;
+          gap: 10px;
+          padding: 30px;
+        }
+        .aa1VUE_01__02 .aa1VUE_01__02_01 .DateTraiterSoulition,.aa1VUE_01__02 .aa1VUE_01__02_01  .TypeSolution{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between ;
+          align-items: center;
+        }
+        .aa1VUE_01__02 .aa1VUE_01__02_01 .DateTraiterSoulition h5,.aa1VUE_01__02 .aa1VUE_01__02_01  .TypeSolution h5{
+          font-size: 15px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: rgb(58, 58, 58);
+        }
+        .aa1VUE_01__02 .aa1VUE_01__02_01 .DateTraiterSoulition p,.aa1VUE_01__02 .aa1VUE_01__02_01  .TypeSolution p{
+          text-transform: uppercase;
+          color: rgb(28, 28, 28);
+          font-size: 14px;
+
+        }
+        .aa1VUE_01__02 .aa1VUE_01__02_01 .messagesSolution{
+          background-color: rgb(58, 58, 58);
+          margin-top: 30px;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          color: #fff;padding: 20px;
+          align-items: center;
+        }
+        .aa1VUE_01__02 .aa1VUE_01__02_01 .messagesSolution h5{
+          font-size: 15px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+        .aa1VUE_01__02 .aa1VUE_01__02_01 .messagesSolution p{
+          font-size: 14px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <section id="mainHomeAgent">
+        <header>
+            <div class="mainHomeAgent_header">
+                <img src="/logo.svg" alt="" srcset="" width="65px">
+                <nav>
+                    <a href="/Agent/" class="activelinkAgent">Listes rec</a>
+                    <a href="/Agent/Envoyer" >Ajouter rec</a>
+                    <!-- <a href="/Agent/Resolues" >Resolues rec</a> -->
+                </nav>
+                <a href="/logout" class="deconnexionBTN_Agent">Deconnexion</a>
+
+            </div>
+        </header>
+        <div class="mainHomeAgent_hidenBox"></div>
+        <section class="mainHomeAgent_boxAll">
+            <div class="mainHomeAgent_boxAll_00">
+                <h2>Liste des réclamations</h2>
+                <b><%= userId %></b>
+                <div class="app2AFF01tab">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-wrap">
+                                <table class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th>Numéro de plainte</th>
+                                      <th>Type de plainte</th>
+                                      <th>Status</th>
+                                      <th>Action</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <% data.filter((row) => { %>
+                                      <tr>
+                                        <th scope="row"><%= row.ID_Reclamation %></th>
+                                        <td ><%= row.typeProblem %></td>
+                                        <% if (row.TypeSolution == 'Reject') {%>
+                                          <td style="color: red;"><%= row.TypeSolution %></td>
+                                        <% }else if(row.TypeSolution == 'Resolution'){%>
+                                          <td style="color: #068843; cursor: pointer;" onclick="openBo('<%= row.TypeSolution %>','<%= row.messagesSolution %>','<%= row.DateTraiterSoulition %>')" >Vue Solution</td>
+                                        <% }else if(row.TypeSolution == 'Envoyer Techn'){%>
+                                          <td style="color: #068843;"><%= row.TypeSolution %></td>
+                                        <% }else if(row.TypeSolution == 'Reclm DC'){%>
+                                          <td style="color: red;"><%= row.TypeSolution %></td>
+                                        <% }%>
+                                        
+                                        <% if (row.TypeSolution == 'Reject') {%>
+                                          <td><a href="#" style="cursor: not-allowed;color: gray;pointer-events: none;text-decoration: none;" class="btn btn-success" >Annuller</a></td>                                       
+                                          <% }else if(row.TypeSolution == 'Resolution'){%>
+                                            <td><a href="#" style="cursor: not-allowed;color: gray;pointer-events: none;text-decoration: none;" class="btn btn-success" >Annuller</a></td>                                       
+                                          <% }else if(row.TypeSolution == 'Envoyer Techn'){%>
+                                            <td><a href="#" style="cursor: not-allowed;color: gray;pointer-events: none;text-decoration: none;" class="btn btn-success" >Annuller</a></td>                                       
+                                          <% }else if(row.TypeSolution == 'Reclm DC'){%>
+                                            <td><a href="#" style="cursor: not-allowed;color: gray;pointer-events: none;text-decoration: none;" class="btn btn-success" >Annuller</a></td>                                       
+                                          <% }else{%>
+                                            <td><a href="#" class="btn btn-success" style="color: #068843;">Annuller</a></td>                                       
+                                          <% }%>
+                                      </tr>
+                                    <% }); %> 
+
+                                  </tbody>
+
+                                  
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+  </section>
+  <div class="aa1VUE">
+    <div class="aa1VUE1">
+        <div class="aa1VUE_01">
+          <div class="aa1VUE_01__01">
+            <h3>Le contenu de réclamation</h3>
+            <i class="uil uil-multiply" onclick="openIcon()"></i>
+          </div>
+          <div class="aa1VUE_01__02">
+            <div class="aa1VUE_01__02_01">
+                <div class="DateTraiterSoulition">
+                  <h5>Date Solution</h5>
+                  <p id="DateTraiterSoulition">fff</p>
+                </div>
+                <div class="TypeSolution">
+                  <h5>Type Soluition</h5>
+                  <p id="TypeSolution">ff</p>
+                </div>
+                <div class="messagesSolution">
+                  <h5>Solution</h5>
+                  <p id="messagesSolution">ff</p>
+                </div>
+            </div>
+            
+          </div>
+          </div>
+    </div>
+  </div>
+    <script src="/js/js.js"></script>
+    <script>
+        const vueBox=document.querySelector('.aa1VUE');
+        const iconVueBox=document.querySelector('.aa1VUE .aa1VUE1 .aa1VUE_01 i');
+        const openBo=(TypeSolution,messagesSolution,DateTraiterSoulition)=>{
+          document.getElementById('DateTraiterSoulition').textContent=DateTraiterSoulition;
+          document.getElementById('TypeSolution').textContent=TypeSolution;
+          document.getElementById('messagesSolution').textContent=messagesSolution;
+          vueBox.classList.add('activeVue');
+        }
+        const openIcon=()=>{
+          vueBox.classList.remove('activeVue');
+        }
+    </script>
+</body>
+</html>

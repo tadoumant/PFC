@@ -1,0 +1,299 @@
+:root{
+    --main-color:#068843;
+    --sesonday-color:#44f898b7;
+    --lighter-color:#e0e0e7;
+    --light-color:#e0e0e0;
+    --dark-color:#52505e;
+    
+    --font-smaller:14px;
+    --font-bigger:20px;
+}
+*{
+    margin: 0;padding: 0;
+}
+*,::before,::after{
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;font-weight: 400;
+    line-height: 1.8;
+    color: var(--dark-color);
+    background-image: url(./images/bodysection.png);
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul{ list-style: none;}
+h1,h2,h3{
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0 0.5rem;
+}
+img{
+    max-width: 100%;
+    vertical-align: middle;
+}
+/*  */
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2em;
+    position: relative;top: 150px;
+
+}
+.form-box{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    /* background-image: url(./images/bodysection.png); */
+    background-image: url(./images/headerbg.png);
+    background-size: cover;
+    background-position: 0;
+
+}
+/* ==> Progress */
+.form-box .progress{
+    position: relative;
+    padding: 1em;
+}
+.logo{
+    font-size: 1.75em;
+    font-weight: 800;
+    color: var(--dark-color);
+    padding: 40px 48px;
+    text-align: center;
+}
+.logo span{
+    color: var(--main-color);
+}
+/* ==>  Progress Steps*/
+.progress ul.progress-steps{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+.progress ul.progress-steps li{
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    gap: 2em;
+    margin-bottom: 2em;
+}
+.progress ul.progress-steps li > span{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-smaller);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+    border-radius: 50%;
+    background-color: var(--lighter-color);
+    z-index: 1;
+}
+.progress ul.progress-steps li.active > span{
+    color: white;
+    background-color: var(--main-color);
+    border: 4px solid var(--sesonday-color);
+    z-index: 1;
+}
+.progress ul.progress-steps li p span{
+    font-size: var(--font-smaller);
+    color: var(--dark-color);
+
+    display: none;
+}
+.progress  ul li p {
+    position: absolute;
+    top: -2em;
+    font-size: 14px;
+}
+/* ==> Form */
+.form-box form{
+    width: 100%;
+    padding: 3em 1em;
+    background-color: white;
+    border-radius: 30px 30px 15px 15px;
+}
+.form-box form > div{
+    max-width: 400px;
+    margin: 0 auto;
+}
+.form-box form > div p{
+    color: var(--light-color);
+    margin-bottom: 2em;
+}
+.form-box form > div > div:not(.checkbox){
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+.form-box form :where(input,select){
+    height: 40px;
+    padding: 0 1em;
+    border-radius: 7px;
+    outline-color: var(--sesonday-color);
+    border: 1px solid var(--lighter-color);
+}
+.form-box form label{
+    font-size: var(--font-smaller);
+    margin-bottom: 0.5em;
+    font-weight: 600;
+}
+.form-box form .grouping{
+    display: flex;
+}
+.form-box form .grouping input{
+    max-width: 70px;
+    text-align: center;
+    margin-right: 1em;
+}
+.form-box form .checkbox input{
+    height: auto;
+}
+
+/* ==> Button */
+
+/* .form-tow ,.form-three{display: none;} */
+
+.form-box form > div:not(.btn-group){
+    display: none;
+    animation:  fedIn .6s cubic-bezier(0.39,0.575,0.565 ,1) both;
+}
+@keyframes fedIn{
+    0% {
+       opacity: 0;
+        transform: translateY(10%);    
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);    
+    }
+}
+.form-box form > div.active{
+    display: block;
+}
+.btn-group  .btn-submit{
+    display: none;
+}
+/*  */
+.form-three.active ~ .btn-group .btn-submit{
+    display: block;
+}
+/*  */
+.btn-group{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+.btn-group [class*="btn-"]{
+    background-color: var(--main-color);
+    color: white;
+    padding: 1em 2.5em;
+    border: 4px solid  var(--sesonday-color);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color .3s ,border-color .3s ease-out;
+}
+
+.btn-group [class*="btn-"]:disabled{
+    background-color: var(--light-color);
+    border-color: var(--lighter-color);
+    cursor: no-drop;
+}
+::placeholder{
+    color: var(--light-color);
+}
+
+.form-one{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.form-one .form-one01{
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.form-one .form-one01 h2{
+    font-size: 19px;
+    color: var(--dark-color);
+}
+.form-one .form-one01 .boxbtn{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: red;
+}
+.form-one .form-one01 .boxbtn button{
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 2px;
+    border: none;
+    font-size: 16px;
+    padding: 5px 20px;
+    cursor: pointer;
+    transition: background-color .3s ,border-color .3s ease-out;
+}
+/*  */
+@media screen and (min-width:768px){
+    .container{
+        width: 100%;
+        padding: 0 2em;
+    }
+    .form-box{
+        flex-direction: row;
+    }
+    .form-box .progress{
+        flex: 1 0 35%;
+        min-width: 300px;
+        padding: 3em;
+    }
+    .logo {
+        margin: -48px -48px 48px;
+    }
+    .progress ul.progress-steps{
+        flex-direction: column;
+        gap: 0;
+    }
+    .progress ul.progress-steps li:not(:last-child)::before{
+        content: "";
+        position: absolute;
+        left: 20px;
+        top: 30px;
+        width: 2px;
+        height: 65px;
+        background-color: var(--lighter-color);
+    }
+    .form-box form{
+        padding: 3em;
+        border-radius: 0 15px 15px 0;
+    }
+    .progress  ul li p {
+        position: relative;
+        top: auto;
+        font-size: inherit;
+    }
+    .progress ul.progress-steps li p span{
+        display: block;
+    }
+}

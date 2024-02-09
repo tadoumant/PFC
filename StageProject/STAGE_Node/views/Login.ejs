@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se connecter</title>
+    <link rel="icon" href="logo.svg">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/mediaQ.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/0c6c59d6fe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+    <style>
+        *{
+            transition:all 3s ease;
+        }
+        .logonform label{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <%- include('parts/header') %> 
+    <br><br>
+    <section class="secLogin">
+        <div class="secLogin01">
+            <div class="secLogin01_01">
+                <div class="secLogin01_01_1">
+                    <form action="/verification" method="post">
+                        <h2>Se connecter</h2>
+                        <p>Cette rubrique est destinée aux producteurs de données (Organismes et institutions publics) pour leur permettre de publier et mettre à jour les données qui relèvent de leurs structures respectives.</p>
+                        <div class="logonform">
+                            <label for="" class="logonformIDUSER">ID d'utilisateur</label>
+                            <input type="text" name="numberCompte" class="logonformIDUSERInp" placeholder="ID d'utilisateur" required>
+                        </div>
+                        <div class="logonform">
+                            <label for="" class="logonformMTPSS">Mot de passe</label>
+                            <input type="password" name="password" class="logonformMTPSSinput" placeholder="Mot de passe" required>
+                        </div>
+                        <div class="checkboxform">
+                            <input type="checkbox" name="" id="checkbox">
+                            <label for="checkbox">Se souvenir de moi</label>
+                        </div>
+                        <a href="/MotDePasswOb" class="MotDePasswOb">Mot de passe oublie ?</a>
+                        <div class="btnSub">
+                            <input type="submit" value="Se connecter">
+                        </div>
+                    </form>
+                </div>
+                <div class="secLogin01_01_2">
+                    <div class="secLogin01_01_2_0">
+                        <h1>Connectez-vous plus rapidement</h1>
+                        <h2>Scannez le code QR avec des applications</h2>
+                        <div class="imgimgQR">
+                            <img src="qrr.png" alt="">
+                        </div>
+                        <p>Le code est valable pour <span id="timers">04:00</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/js/js.js"></script>
+    <script>
+        document.querySelector('.logonformIDUSERInp').addEventListener('focus',()=>{
+            document.querySelector('.logonformIDUSER').style.display='block';
+            document.querySelector('.logonformIDUSERInp').placeholder='';
+        })
+        document.querySelector('.logonformIDUSERInp').addEventListener('focusout',()=>{
+            document.querySelector('.logonformIDUSER').style.display='none';
+            document.querySelector('.logonformIDUSERInp').placeholder="ID d'utilisateur";
+        })
+        document.querySelector('.logonformMTPSSinput').addEventListener('focus',()=>{
+            document.querySelector('.logonformMTPSS').style.display='block';
+            document.querySelector('.logonformMTPSSinput').placeholder='';
+
+        })
+        document.querySelector('.logonformMTPSSinput').addEventListener('focusout',()=>{
+            document.querySelector('.logonformMTPSS').style.display='none';
+            document.querySelector('.logonformMTPSSinput').placeholder='Mot de passe';
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+header{
+    z-index: 1000;
+    width: 100%;
+    height: 80px;
+    background-image: url('/headerbg.png');
+    background-position: 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 3px 0px 5px 0px black;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
+}
+header .header01{
+    width: 80%;
+    height: 100%;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+header .header01 nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+header .header01 nav .navLink01{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+header .header01 nav .navLink01 a{
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+}
+header .header01 nav .navLink01 .ac:hover{
+    color: #068843;
+}
+header .header01 nav .navLink01 .ac{
+    color: #068843;
+}
+header .header01 nav  .seConnectBTN{
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-size: 13px;
+    color: #fff;
+    background-color: #068843;
+}
+.header02 a:hover{
+    color: #068843;
+}
+.header02 .ac:hover{
+    color: #068843;
+}
+/*  */
+
+header .header02{
+    display: none;
+    
+}
+header .header02 i{
+    font-size: 35px;
+    color: #068843;
+    cursor: pointer;
+}
+header .header02 .uil-times{
+    display: none;
+}
+.header02 nav{
+    z-index: 10000000;
+    overflow: hidden;
+    width: 100%;
+    height: 90vh;
+    background-color: rgb(253, 253, 253);
+    top: 80px;
+    left: -1000px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    scroll-behavior: auto;
+    /* display: none; */
+    transition: all 1s ease;
+
+}
+.header02.activeNav .uil-bars{
+    display: none;
+}
+.header02.activeNav .uil-times{
+    display: block;
+}
+.header02.activeNav nav{
+    transition: all 1s ease;
+    z-index: 10000000;
+    overflow: hidden;
+    width: 100%;
+    height: 90vh;
+    background-color: rgba(163, 163, 163, 0.535);
+    backdrop-filter: blur(4px);
+    top: 80px;
+    left: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    scroll-behavior: auto; 
+}
+.header02 nav a{
+    color: rgb(0, 0, 0);
+    font-size: 26px;
+    font-weight: 700;
+}
+.header02 nav a:hover{
+    color: #068843;
+}
+.header02 nav .seConnectBTN{
+    border-radius: 4px;
+    padding: 10px 25px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #068843;
+}
+.header02 nav .seConnectBTN:hover{
+    color: #fff;
+}

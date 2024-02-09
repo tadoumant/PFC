@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter Reclmation</title>
+    <link rel="icon" href="../logo.svg">
+    <link rel="stylesheet" href="/css/AgentEnv.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/0c6c59d6fe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+    <style>
+        .form-three{
+            display: flex;
+            flex-direction: row;
+            gap: 1px;
+            margin: 0;
+        }
+        .form-three  .form-three0 p{
+            width: 100%;
+            background-color: rgba(239, 239, 239, 0.363);
+            color: black;
+            padding: 10px;
+            cursor: no-drop;
+            border-radius: 10px;
+        }
+        .form-three0text {
+            overflow: hidden;
+        }
+        .form-three0text p{
+            background-color: transparent;
+            color: rgba(239, 239, 239, 0.363);
+            width: 100%;
+            font-size: 13px;
+            
+        }
+        .problemesDetails{
+            font-size: 12px;
+        }
+        .autueProbelme{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+
+            
+        }
+        .autueProbelme_01 ,.autueProbelme_02{
+            display: flex;flex-direction: column;
+            gap: 5px;
+        }
+        /*  */
+        .showProbelemExact{
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            cursor: pointer;
+        }
+        .checkbox{
+            padding: 10px;
+            background-color: rgba(223, 223, 223, 0.347);
+            border-radius: 10px;
+        }
+        .checkbox input{
+            margin-right: 10px;
+        }
+        .checkbox label{
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    <section id="mainHomeAgent">
+        <header>
+            <div class="mainHomeAgent_header">
+                <img src="/logo.svg" alt="" srcset="" width="65px">
+                <nav>
+                    <a href="/Agent/" >Listes rec</a>
+                    <a href="/Agent/Envoyer" class="activelinkAgent">Ajouter rec</a>
+                    <!-- <a href="/Agent/Resolues" >Resolues rec</a> -->
+                </nav>
+                <a href="/logout" class="deconnexionBTN_Agent">Deconnexion</a>
+            </div>
+        </header>
+        <div class="mainHomeAgent_hidenBox"></div>
+        <div id="page" class="site">
+            <div class="container">
+                <div class="form-box">
+                    <!--  -->
+                    <div class="progress">
+                        <div class="logo">
+                            <img src="/logo.svg" alt="" srcset="" width="100px">
+                        </div>
+                        <ul class="progress-steps">
+                            <li class="step active">
+                                <span>1</span>
+                                <p>Définir <br><span>25 sec to complete</span></p>
+                            </li>
+                            <li class="step">
+                                <span>2</span>
+                                <p>Details<br><span>60 sec to complete</span></p>
+                            </li>
+                            <li class="step">
+                                <span>3</span>
+                                <p>Confirmer<br><span>30 sec to complete</span></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--  -->
+                    <form action="/AgentEnv" id="myForm"  method="post">
+                        <div class="form-one form-step active">
+                            <div class="bg-svg"></div>
+                            <h2>Définir le problème</h2>
+                            <p>Saisir correctement les informations sur le problème</p>
+                            <div>
+                                <label>Problème : </label>
+                                <select name="Problème" id="Probleme" onchange="showContent()" autofocus>
+                                    <option value="">Veuillez sélectionner</option>
+                                    <option value="Problème Technique">Problème Technique </option>
+                                    <option value="Problème de sécurité informatique">Problème de sécurité informatique </option>
+                                    <option value="Problème De Communication">Problème De Communication</option>
+                                    <option value="Problème Organisationnel">Problème Organisationnel</option>
+                                    <option value="Problème Relationnel">Problème Relationnel</option>
+                                    <option value="Problème Financier">Problème Financier</option>
+                                    <option value="Autre Problème">Autre Problème </option>
+                                </select>
+                            </div>
+                            <div class="showProbelemExact" id="showProbelemExact"> 
+                            </div>
+                        </div>
+                        <!--  -->
+                        <div class="form-tow form-step">
+                            <div class="bg-svg"></div>
+                            <h2>Details le problème</h2>
+                            <br>
+                            <div>
+                                <label>Problème exact en 50 mots</label>
+                                <textarea  name="probelmEx" id="probelmEx" cols="30" rows="10" placeholder="Problème exact en 50 mots" autofocus></textarea>
+                            </div>
+                            <div >
+                                <label class="supplemePro">Suppléments de problème <span>(PDF, Video, Images, Rapport, ..) </span></label>
+                                <input type="file" name="" id="" class="fileInput">
+                            </div>
+                           
+                        </div>
+                        <!--  -->
+                        <div class="form-three form-step" id="form-three">
+                            <h2>Confirmer les informations</h2>
+                            <br>
+                            <div class="lodd">
+                                <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                            </div>
+                        </div>
+                        <!--  -->
+                        <div class="btn-group">
+                            <button type="button" class="btn-prev" disabled>Back</button>
+                            <button type="button" class="btn-next">next Step</button>
+                            <button type="submit" class="btn-submit" onsubmit="subb()">Submit</button>
+                        </div>
+                    </form>
+                    <!--  -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/js/js.js"></script>
+    <script src="/js/js2.js"></script>
+    <script>
+        function showContent() {
+            var selectBox = document.getElementById("Probleme");
+            var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+            var contentDiv = document.getElementById("showProbelemExact");
+            if (selectedValue === "Problème Technique") {
+                contentDiv.innerHTML =`
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox1" name='ch' value="Un ordinateur qui ne démarre pas">
+                                <label for="checkbox1">Un ordinateur qui ne démarre pas. </label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox2" name='ch' value="Un problème de connexion Internet">
+                                <label for="checkbox2">Un problème de connexion Internet. </label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox3" name='ch' value="Une imprimante qui ne fonctionne pas">
+                                <label for="checkbox3">Une imprimante qui ne fonctionne pas. </label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox4" name='ch' value="Un téléphone portable qui se fige régulièrement">
+                                <label for="checkbox4">Un téléphone portable qui se fige régulièrement.  </label>
+                            </div> 
+                `;
+            }
+            else if(selectedValue === "Problème de sécurité informatique"){
+                contentDiv.innerHTML =`
+                            <div class="checkbox">
+                                <input type="checkbox"name='ch'  id="checkbox1" value="?">
+                                <label for="checkbox1">? </label>
+                            </div>
+                            <div class="checkbox" >
+                                <input type="checkbox" name='ch' id="checkbox2" value="?">
+                                <label for="checkbox2">?</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" name='ch' id="checkbox3" value="?">
+                                <label for="checkbox3">?</label>
+                            </div>
+                `;
+            }
+            else if(selectedValue === "Problème De Communication"){
+                contentDiv.innerHTML =`
+                            <div class="checkbox">
+                                <input type="checkbox" name='ch' id="checkbox1" value="Des malentendus fréquents entre collègues">
+                                <label for="checkbox1"> Des malentendus fréquents entre collègues.</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" name='ch' id="checkbox2" value="Des difficultés à exprimer clairement ses idées">
+                                <label for="checkbox2">Des difficultés à exprimer clairement ses idées.  </label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" name='ch' id="checkbox3" value="Des problèmes de langage ou de barrière culturelle lors d'une conversation avec une personne étrangère">
+                                <label for="checkbox3">Des problèmes de langage ou de barrière culturelle lors d'une conversation avec une personne étrangère. </label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" name='ch' id="checkbox4" value="Des difficultés à écouter activement et à comprendre les autres">
+                                <label for="checkbox4">Des difficultés à écouter activement et à comprendre les autres. </label>
+                            </div> 
+                `;
+            }
+            else if(selectedValue === "Problème Organisationnel"){
+                contentDiv.innerHTML =`
+                            <div class="checkbox">
+                                <input type="checkbox" name='ch' id="checkbox1" value="Une mauvaise gestion du temps et des priorités">
+                                <label for="checkbox1">Une mauvaise gestion du temps et des priorités. </label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" name='ch' id="checkbox2" value="Des procédures inefficaces au travail">
+                                <label for="checkbox2">Des procédures inefficaces au travail. </label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" name='ch' id="checkbox3" value="Un manque de coordination entre différentes équipes ou départements">
+                                <label for="checkbox3">Un manque de coordination entre différentes équipes ou départements.</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" name='ch' id="checkbox4" value="Des problèmes liés à la logistique et à la planification des ressources">
+                                <label for="checkbox4">Des problèmes liés à la logistique et à la planification des ressources</label>
+                            </div> 
+                `;
+            }
+            else if(selectedValue === "Problème Relationnel"){
+                contentDiv.innerHTML =`
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox1"name='ch'  value="Des conflits fréquents avec un collègue ou un supérieur">
+                                <label for="checkbox1">Des conflits fréquents avec un collègue ou un supérieur.  </label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox2" name='ch'  value="Des difficultés à travailler en équipe">
+                                <label for="checkbox2">Des difficultés à travailler en équipe.  </label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox3" name='ch' value="Un manque de communication et de confiance entre les membres d'un groupe">
+                                <label for="checkbox3">Un manque de communication et de confiance entre les membres d'un groupe. </label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox4" name='ch' value="Des tensions entre différents départements d'une organisation">
+                                <label for="checkbox4">Des tensions entre différents départements d'une organisation. </label>
+                            </div> 
+                `;
+
+            }
+            else if(selectedValue === "Problème Financier"){
+                contentDiv.innerHTML =`
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox1" name='ch' value="Des difficultés à gérer un budget personnel ou professionnel">
+                                <label for="checkbox1">Des difficultés à gérer un budget personnel ou professionnel.</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox2" name='ch' value="Des dépenses excessives ou imprévues">
+                                <label for="checkbox2">Des dépenses excessives ou imprévues.  </label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox3" name='ch' value="Des problèmes de recouvrement de créances">
+                                <label for="checkbox3">Des problèmes de recouvrement de créances. </label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox4" name='ch' value="Des difficultés à obtenir un financement pour un projet">
+                                <label for="checkbox4">Des difficultés à obtenir un financement pour un projet.  </label>
+                            </div> 
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox5" name='ch' value="Ce ne sont là que quelques exemples parmi une multitude de problèmes possibles">
+                                <label for="checkbox5">Ce ne sont là que quelques exemples parmi une multitude de problèmes possibles.</label>
+                            </div> 
+                             <div class="checkbox">
+                                <input type="checkbox" id="checkbox6" name='ch' value="Chaque situation est unique et nécessite une approche spécifique pour trouver des solutions adaptées">
+                                <label for="checkbox6">Chaque situation est unique et nécessite une approche spécifique pour trouver des solutions adaptées. </label>
+                            </div> 
+                `;
+            }
+            else if(selectedValue === "Autre Problème"){
+                contentDiv.innerHTML =`<div class="autueProbelme">
+                                    <div class="autueProbelme_01">
+                                        <label>Problème :</label>
+                                        <input type="text" >
+                                    </div>
+                                    <div class="autueProbelme_02">
+                                        <label for="">Details :</label>
+                                        <textarea name="autueProbelme_02Details" id="" cols="30" rows="10"></textarea>
+                                    </div>
+                                </div>`;
+
+            }else {
+                contentDiv.innerHTML = "Merci de préciser votre problème";
+            }
+            
+        }
+        
+        window.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('myForm');
+            const infoDiv = document.getElementById('form-three');
+            form.addEventListener('change', function() {
+                const problemeTitle = document.getElementById('Probleme').value;
+                const probelmEx = document.getElementById('probelmEx').value;
+                let problemesDetails = [];
+                var checkboxes = document.querySelectorAll('.showProbelemExact input[type="checkbox"]:checked');
+                for (var i = 0; i < checkboxes.length; i++) {
+                    problemesDetails.push('✎ '+checkboxes[i].value);
+                   var problemesDetails1 = problemesDetails.join(" <br> "); 
+                }
+                if (problemeTitle.trim() !== '' && probelmEx.trim() !== '' && problemesDetails !== '') {
+                    setTimeout(function() {
+                        infoDiv.innerHTML=`
+                        <h2>Confirmer les informations</h2>
+                        <br>
+                        <div class="form-three0">
+                            <label>Problème</label>
+                            <p>${problemeTitle}</p>
+                        </div>
+                        <div class="form-three0">
+                            <label>Details Problème</label>
+                            <p class="problemesDetails">${problemesDetails1}</p>
+
+                        </div>
+                        <div class="form-three0 form-three0text">
+                            <label>Messages</label>
+                            <p>${probelmEx}</p>
+
+                        </div>`;
+                    },200);
+                    
+                }else{infoDiv.innerHTML=`<h2>Confirmer les informations</h2><br><div class="lodd"><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>`; }
+            });
+        });
+    </script>
+
+</body>
+</html>
+<!-- const subb=()=>{
+    const problemeTitle = document.getElementById('Probleme').value;
+    const probelmEx = document.getElementById('probelmEx').value;
+    let problemesDetails = [];
+        var checkboxes = document.querySelectorAll('.showProbelemExact input[type="checkbox"]:checked');
+        for (var i = 0; i < checkboxes.length; i++) {
+           var problemesDetails1 = problemesDetails.join(","); 
+        }
+        fetch('/AgentEnv', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ problemeTitle: problemeTitle ,problemesDetails: problemesDetails ,probelmEx:probelmEx })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        
+    } -->

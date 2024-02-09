@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se connecter</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/0c6c59d6fe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+    <style>
+        .secLogin01_01_1 form .logonform input{
+            height: 40px;
+            padding: 0 1em;
+            border-radius: 7px;
+            border: 1px solid #e0e0e7;
+            outline-color: #44f898b7;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header01">
+            <img src="./images/logo.svg" alt="" srcset="" width="65px">
+            <nav>
+                <div class="navLink01">
+                    <a href="./index.html">ACCUEIL</a>
+                    <!-- <a href="./propos.html">A PROPOS</a> -->
+                    <a href="./contact.html">CONTACT</a>
+                </div>
+                <a href="./login.html" class="seConnectBTN" style="background-color: #068843;">SE CONNECTER</a>
+            </nav>
+        </div>
+        <div class="header02">
+            <img src="./images/logo.svg" alt="" srcset="" width="65px">
+            <i class="uil uil-bars"></i>
+            <i class="uil uil-times"></i>
+            <nav>
+                <a href="./index.html">ACCUEIL</a>
+                <!-- <a href="./propos.html" >A PROPOS</a> -->
+                <a href="./contact.html">CONTACT</a>
+                <a href="./login.html" class="seConnectBTN" style="background-color: #068843;">SE CONNECTER</a>
+            </nav>
+        </div>
+    </header>
+    <section class="secLogin">
+        <div class="secLogin01">
+            <div class="secLogin01_01">
+                <div class="secLogin01_01_1">
+                    <form action="" method="post">
+                        <h2>Se connecter</h2>
+                        <p>Cette rubrique est destinée aux producteurs de données (Organismes et institutions publics) pour leur permettre de publier et mettre à jour les données qui relèvent de leurs structures respectives.</p>
+                        <div class="logonform">
+                            <label for="">Nom d'utilisateur</label>
+                            <input type="text">
+                        </div>
+                        <div class="logonform">
+                            <label for="">Mot de passe</label>
+                            <input type="password">
+                        </div>
+                        <div class="checkboxform">
+                            <input type="checkbox" name="" id="checkbox">
+                            <label for="checkbox">Se souvenir de moi</label>
+                        </div>
+                        <div class="btnSub">
+                            <input type="submit" value="Se connecter">
+                        </div>
+                    </form>
+                </div>
+                <div class="secLogin01_01_2">
+                    <div class="secLogin01_01_2_0">
+                        <h1>Connectez-vous plus rapidement</h1>
+                        <h2>Scannez le code QR avec des applications</h2>
+                        <div class="imgimgQR">
+                            <img src="./images/qrr.png" alt="">
+                        </div>
+                        <p>Le code est valable pour <span id="timers">04:00</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="./js.js"></script>
+
+</body>
+</html>

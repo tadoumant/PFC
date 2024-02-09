@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrateur</title>
+    <link rel="icon" href="../logo.svg">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/mediaQ.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/0c6c59d6fe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+    <style>
+        .spceee{
+            width: 100%;
+            height: 100px;
+            background-color: transparent;
+        }
+        .rgRow{
+            width: 200px;
+        }
+        th,.actions{
+          padding: 10px;
+        }
+        body{
+          position: relative;
+        }
+        .actions{
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          align-items: center;
+          justify-content: space-around;
+          flex-wrap: wrap;
+        }
+        .actions a{
+          font-size: 11px;
+        }
+        .aa1TRAITER_01,.aa1VUE_01,.aa1ENATTENTE_01{
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+        .aa1TRAITER_01__01,.aa1VUE_01__01,.aa1ENATTENTE_01__01{
+          width: 100%;
+          display: flex;flex-direction: row;
+          justify-content: space-between;
+        }
+        .aa1VUE_01__01 h3{
+          font-size: 18px;
+          font-weight: 600;
+          letter-spacing: 2px;
+          color: rgb(229, 134, 17);
+        }
+        .aa1ENATTENTE_01__01 h3{
+          font-size: 18px;
+          font-weight: 600;
+          letter-spacing: 2px;   
+          color: red;
+        }
+        .aa1TRAITER_01__01 h3{
+          font-size: 18px;
+          font-weight: 600;
+          color: #068843;
+          letter-spacing: 2px;   
+        }
+        .aa1TRAITER_01__02,.aa1VUE_01__02,.aa1ENATTENTE_01__02{
+          /* background-color: rgba(239, 239, 239, 0.489); */
+          width: 100%;
+          height: 100%;
+          border-top-left-radius: 30px;
+          border-bottom-right-radius: 30px;
+          /* box-shadow: 0px 0px 6px 0px #70707070; */
+        }
+        .aa1VUE_01  i ,.aa1TRAITER_01 i,.aa1ENATTENTE_01 i{
+          font-size: 20px;
+          font-weight: 700;
+          cursor: pointer;
+        }
+        .aa1VUE,.aa1TRAITER,.aa1ENATTENTE{
+          width: 100%;
+          height:100%;
+          background-color: rgba(0, 0, 0, 0.288);
+          position: absolute;
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          top: 0%;
+          left: 0%;
+        }
+        .aa1VUE1,.aa1TRAITER1,.aa1ENATTENTE1{
+          width: 60%;
+          height: 60%;
+          background-color: #fff;
+          border-radius: 20px;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+        .aa1TRAITER{
+          display: none;
+        }
+        .aa1TRAITER.activeTraiter{
+          display: flex;
+        }
+        .aa1VUE{
+          display: none;
+        }
+        .aa1VUE.activeVue{
+          display: flex;
+        }
+        .aa1ENATTENTE{
+          display: none;
+        }
+        .aa1ENATTENTE.activeEnatt{
+          display: flex;
+        }
+        /*  */
+        /*  VUE */
+        .aa1VUE_01__02{
+          width: 100%;
+          height: 100%;
+          display: flex;flex-direction: column;
+          gap: 20px;
+        }
+        .aa1VUE_01__02 .aa1VUE_01__02_01{
+          padding: 20px;
+          width: 100%;
+          height: 80%;
+          background-color: rgba(239, 239, 239, 0.489);
+          border-top-left-radius: 30px;
+          box-shadow: 0px 0px 6px 0px #70707070;
+          display: flex;flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        .aa1VUE_01__02 .aa1VUE_01__02_02{
+          background-color: rgba(239, 239, 239, 0.489);
+          border-bottom-right-radius: 30px;
+          box-shadow: 0px 0px 6px 0px #70707070;
+          display: flex;flex-direction: row;
+          justify-content: space-around;
+          align-items: center;
+        }
+        .aa1VUE_01__02 .aa1VUE_01__02_02 button{
+          width: 100%;
+          padding: 10px 10px;
+          border: none;
+          cursor: pointer;
+          color: #fff;
+          font-size: 15px;
+        }
+        .aa1VUE_01__02 .aa1VUE_01__02_02 button.trat{
+          border-top-left-radius: 20px;
+          background-color: #068843;
+        }
+        .aa1VUE_01__02 .aa1VUE_01__02_02 button.enatt{
+          background-color: red;
+          border-bottom-right-radius: 20px;
+        }
+        /* TRAITER */
+        .aa1TRAITER_01__02_btns{  
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+        }
+        .aa1TRAITER_01__02_btns button{
+          width: 90%;
+          height: 60px;
+          font-weight: bolder;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          cursor: pointer;
+          box-shadow: 0px 0px 6px 0px #70707070;
+          border: none;
+          display: flex;flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 10px;
+        }
+        .aa1TRAITER_01__02_btns button i{
+          color: black;
+        }
+        .aa1TRAITER_01__02_btns button:hover{
+          background-color: rgba(131, 131, 131, 0.705);
+          color: #fff;
+        }
+        /*  */
+        .ReclResolutionbox , .ReclRejetbox , .DemandeTechbox , .ReclamerDCbox{
+          width: 100%;
+          height: 100%;
+          background-color: rgba(224, 224, 224, 0.705);
+          box-shadow: 0px 0px 6px 0px #70707070;
+          border-top-left-radius: 30px;
+          border-bottom-right-radius: 30px;
+          display: flex;flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          display: none;
+        }
+
+</style>
+</head>
+<body>
+    <%- include('parts/header') %>  
+    <section class="app2AFF">
+        <div class="app2AFF01">
+            <h2>Afficher tous les messages contact</h2>
+            <div class="app2AFF01tab">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-wrap">
+                          <table class="table table-striped">
+                            <thead>
+                              <tr>
+                                <th>Nu de contact</th>
+                                <th>Nome</th>
+                                <th>Identify</th>
+                                <th class="rgRow">Régions du Royaume</th>
+                                <th>messages</th>
+                                <th >IP Address</th>
+                                <th>Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <% data.forEach((row) => { %>
+                                <tr>
+                                  <th scope="row"><%= row.numberContact %></th>
+                                  <td ><%= row.name %></td>
+                                  <td ><%= row.Identify %></td>
+                                  <td ><%= row.nameRegions %></td>
+                                  <td><%= row.messages %></td>
+                                  <td ><%= row.ip_address %></td>
+                                  <td><a href="#" class="btn btn-warning" onclick="warning(1)">delet</a></td>
+                                </tr>
+                              <% }); %>                              
+                            </tbody>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--  -->
+    <div class="aa1VUE">
+      <div class="aa1VUE1">
+          <div class="aa1VUE_01">
+            <div class="aa1VUE_01__01">
+              <h3>Le contenu de réclamation</h3>
+              <!-- <p ></p> -->
+              <i class="uil uil-multiply" onclick="warningIcon()"></i>
+            </div>
+            <div class="aa1VUE_01__02">
+              <div class="aa1VUE_01__02_01">
+                  Info
+              </div>
+              <div class="aa1VUE_01__02_02">
+                <button class="trat" onclick="btnTraiterVue()">TRAITER</button>
+                <button class="enatt" onclick="btnEnattVue()">EN ATTENTE</button>
+              </div>
+            </div>
+            </div>
+      </div>
+    </div>
+    <!--  -->
+    <div class="aa1TRAITER">
+      <div class="aa1TRAITER1">
+          <div class="aa1TRAITER_01">
+              <div class="aa1TRAITER_01__01">
+                <h3>TRAITER de réclamation</h3>
+                <i class="uil uil-multiply" onclick="traiterIcon()"></i>
+              </div>
+              <div class="aa1TRAITER_01__02">
+                <div class="aa1TRAITER_01__02_btns">
+                  <button onclick="ReclResolution()">Réclamation de Résolution <i class="uil uil-apps"></i></button>
+                  <button onclick="ReclRejet()">réclamation de Rejet <i class="uil uil-apps"></i></button>
+                  <button onclick="DemandeTech()">Demande Technicien <i class="uil uil-apps"></i></button>
+                  <button onclick="ReclamerDC()">Réclamer DC <i class="uil uil-apps"></i></button>
+                </div>
+                <div class="ReclResolutionbox">
+                    Réclamation de Résolution
+                </div>
+                <div class="ReclRejetbox">
+                  réclamation de Rejet 
+                </div>
+                <div class="DemandeTechbox">
+                  Demande Technicien 
+                </div>
+                <div class="ReclamerDCbox">
+                  Réclamer DC 
+                </div>          
+              </div>
+          </div>
+      </div>
+    </div>
+    <!--  -->
+    <div class="aa1ENATTENTE">
+      <div class="aa1ENATTENTE1">
+          <div class="aa1ENATTENTE_01">
+              <div class="aa1ENATTENTE_01__01">
+                <h3>EN ATTENTE de réclamation</h3>
+                <i class="uil uil-multiply" onclick="enattIcon()"></i>
+              </div>
+              <div class="aa1ENATTENTE_01__02">
+  
+              </div>
+
+          </div>
+      </div>
+    </div>
+
+    
+    <script src="/js/js.js"></script>
+    <script>
+        // VUE 
+        const vueBox=document.querySelector('.aa1VUE');
+        const iconVueBox=document.querySelector('.aa1VUE .aa1VUE1 .aa1VUE_01 i');
+        const warning=(m)=>{
+            vueBox.classList.add('activeVue');
+        }
+        const warningIcon=()=>{
+          vueBox.classList.remove('activeVue');
+        }
+        // TRAITER
+        const traiterBox=document.querySelector('.aa1TRAITER');
+        const iconTraiterBox=document.querySelector('.aa1TRAITER .aa1TRAITER1 .aa1TRAITER_01 i');
+        const traiter=(m)=>{
+          traiterBox.classList.add('activeTraiter');
+        }
+        const traiterIcon=()=>{
+          traiterBox.classList.remove('activeTraiter');
+        }
+        // EN ATT
+        const enattBox=document.querySelector('.aa1ENATTENTE');
+        const iconEnattBox=document.querySelector('.aa1ENATTENTE .aa1ENATTENTE1 .aa1ENATTENTE_01 i');
+        const enatt=()=>{
+          enattBox.classList.add('activeEnatt');
+        }
+        const enattIcon=()=>{
+          enattBox.classList.remove('activeEnatt');
+        }
+    
+    
+        // btn Vue
+        const btnTraiterVue=(m)=>{
+          vueBox.classList.remove('activeVue');
+          traiterBox.classList.add('activeTraiter');
+        }
+        const btnEnattVue=(m)=>{
+          vueBox.classList.remove('activeVue');
+          enattBox.classList.add('activeEnatt');
+        }
+
+        // Traiterrr 
+        const ReclResolution=()=>{
+          document.querySelector('.aa1TRAITER_01__02_btns').style.display="none";
+          document.querySelector('.ReclResolutionbox').style.display="flex";
+        }
+        const ReclRejet=()=>{
+          document.querySelector('.aa1TRAITER_01__02_btns').style.display="none";
+          document.querySelector('.ReclRejetbox').style.display="flex";
+
+        }
+        const DemandeTech=()=>{
+          document.querySelector('.aa1TRAITER_01__02_btns').style.display="none";
+          document.querySelector('.DemandeTechbox').style.display="flex";
+
+        }
+        const ReclamerDC=()=>{
+          document.querySelector('.aa1TRAITER_01__02_btns').style.display="none";
+          document.querySelector('.ReclamerDCbox').style.display="flex";
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="icon" href="logo.svg">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/mediaQ.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/0c6c59d6fe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+</head>
+<body>
+    <%- include('parts/header') %> 
+    <br><br>
+    <section class="secLogin1">
+        <div class="secLoginFAQ">
+            <div class="contact">
+                <h1>Contactez-nous</h1>
+                <div class="contact01">
+                    <div class="contact01_0">
+                        <div class="contact01_0_1 contact01_0_101">
+                            <i class="uil uil-location-pin-alt"></i>
+                            <p> Espace les Lauriers aile B, angle des Avenues Ennakhil et Mehdi Ben Barka, Hay Ryad - Rabat</p>
+                        </div>
+                        <div class="contact01_0_1 contact01_0_102">
+                            <i class="uil uil-envelope-edit"></i>
+                            <p>opendata@add.gov.ma</p>
+                        </div>
+                        <div class="contact01_0_1 contact01_0_103">
+                            <i class="uil uil-phone"></i>
+                            <p>+212 (0) 5 37 56 93 00</p>
+                        </div>
+                        
+                    </div>
+                    <form action="/ContactSned" method="post">
+                        <div class="formContact">
+                            <div class="formContact1">
+                                <input type="text" name="name" id="" placeholder="nom et prénom" class="nomPre" required>
+                                <input type="text" name="identifiant" id="" placeholder="identifiant" class="ident" required>
+                            </div>
+                            <div class="formContact2">
+                                <label for="">Régions du Royaume du Maroc</label>
+                                <select name="regionsRoyaumeMar" id="" required>
+                                    <option value="Tanger Tétouan Al Hoceima" class="RRM1">Tanger-Tétouan-Al Hoceima</option>
+                                    <option value="l est" class="RRM2"> l'est</option>
+                                    <option value="Fès Meknès" class="RRM3">Fès-Meknès</option>
+                                    <option value="Rabat Salé Kenitra" class="RRM4">Rabat-Salé-Kenitra</option>
+                                    <option value="Beni Mellal Khenifra" class="RRM5">Beni Mellal-Khenifra</option>
+                                    <option value="Casablanca Settat" class="RRM6">Casablanca-Settat</option>
+                                    <option value="Marrakech Safi" class="RRM7">Marrakech-Safi</option>
+                                    <option value="Draa Tafilalet" class="RRM8">Draa-Tafilalet</option>
+                                    <option value="Souss Massa" class="RRM9">Souss-Massa</option>
+                                    <option value="uelmim Oued_Nom" class="RRM10">Guelmim Oued Nom</option>
+                                    <option value="Laâyoune Sakia El Hamra" class="RRM11">Laâyoune Sakia El Hamra</option>
+                                    <option value="Dakhla Oued Ed Dahab" class="RRM12">Dakhla-Oued Ed-Dahab</option>
+                                </select>
+                            </div>
+                            <textarea name="messages" id="" cols="30" rows="10" placeholder="Entrez vos messages" class="evm" required></textarea>
+                            <div class="formContact3">
+                                <button type="submit">Envoyer maintenant</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <script src="/js/js.js"></script>
+</body>
+</html>

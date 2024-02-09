@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/0c6c59d6fe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+    <style>
+        footer{
+         width: 100%;
+         height: 80px;
+         background-color: rgba(164, 164, 164, 0.277);
+         display: flex;flex-direction: column;
+         align-items: center;
+         justify-content: center;
+        }
+        footer .footer01{
+         width: 100%;
+         height: 70px;
+         padding: 5px 200px;
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: space-between;
+        }
+        footer .footer01 span{
+             display: flex;flex-direction: row;
+             align-items: center;gap: 10px;
+             font-size: 13px;
+             letter-spacing: 1px;
+             color: rgb(0, 0, 0);
+        }
+        footer .footer01 span a{
+         font-weight: 700;
+         color: rgb(0, 0, 0);
+        }
+        footer .footer01 .lang{
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         gap: 10px;
+        }
+        footer .footer01 .lang h2{
+             font-size: 13px;
+             font-weight: 400;
+        }
+        footer .footer01 .lang select{
+             background-color: #068843;
+             color: #fff;
+             border: none;
+             outline: none;
+             padding: 2px 20px;
+             border-top-left-radius: 10px;
+             cursor: pointer;
+        }
+     </style>
+</head>
+<body>
+    <header>
+        <div class="header01">
+            <img src="./images/logo.svg" alt="" srcset="" width="65px">
+            <nav>
+                <div class="navLink01">
+                    <a href="./index.html" class="textACCUEIL">ACCUEIL</a>
+                    <!-- <a href="./propos.html" class="textPROPOS">A PROPOS</a> -->
+                    <a href="./contact.html" class="ac textCONTACT">CONTACT</a>
+                </div>
+                <a href="./login.html" class="seConnectBTN textSECONNECTER">SE CONNECTER</a>
+            </nav>
+        </div>
+        <div class="header02 ">
+            <img src="./images/logo.svg" alt="" srcset="" width="65px">
+            <i class="uil uil-bars"></i>
+            <i class="uil uil-times"></i>
+            <nav>
+                <a href="./index.html" class="textACCUEIL">ACCUEIL</a>
+                <!-- <a href="./propos.html" class="textPROPOS">A PROPOS</a> -->
+                <a href="./contact.html" class="ac textCONTACT">CONTACT</a>
+                <a href="./login.html" class="seConnectBTN textSECONNECTER">SE CONNECTER</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="secLogin1">
+        <div class="secLoginFAQ">
+            <div class="contact">
+                <h1>Contactez-nous</h1>
+                <div class="contact01">
+                    <div class="contact01_0">
+                        <div class="contact01_0_1 contact01_0_101">
+                            <i class="uil uil-location-pin-alt"></i>
+                            <p> Espace les Lauriers aile B, angle des Avenues Ennakhil et Mehdi Ben Barka, Hay Ryad - Rabat</p>
+                        </div>
+                        <div class="contact01_0_1 contact01_0_102">
+                            <i class="uil uil-envelope-edit"></i>
+                            <p>opendata@add.gov.ma</p>
+                        </div>
+                        <div class="contact01_0_1 contact01_0_103">
+                            <i class="uil uil-phone"></i>
+                            <p>+212 (0) 5 37 56 93 00</p>
+                        </div>
+                        
+                    </div>
+                    <form action="" method="post">
+                        <div class="formContact">
+                            <div class="formContact1">
+                                <input type="text" name="" id="" placeholder="nom et prénom" class="nomPre">
+                                <input type="text" name="" id="" placeholder="identifiant" class="ident">
+                            </div>
+                            <div class="formContact2">
+                                <label for="">Régions du Royaume du Maroc</label>
+                                <select name="" id="" >
+                                    <option value="Tanger_Tétouan-Al_Hoceima" class="RRM1">Tanger-Tétouan-Al Hoceima</option>
+                                    <option value="l_est" class="RRM2"> l'est</option>
+                                    <option value="Fès-Meknès" class="RRM3">Fès-Meknès</option>
+                                    <option value="Rabat-Salé-Kenitra" class="RRM4">Rabat-Salé-Kenitra</option>
+                                    <option value="Beni_Mellal-Khenifra" class="RRM5">Beni Mellal-Khenifra</option>
+                                    <option value="Casablanca-Settat" class="RRM6">Casablanca-Settat</option>
+                                    <option value="Marrakech-Safi" class="RRM7">Marrakech-Safi</option>
+                                    <option value="Draa-Tafilalet" class="RRM8">Draa-Tafilalet</option>
+                                    <option value="Souss-Massa" class="RRM9">Souss-Massa</option>
+                                    <option value="uelmim_Oued_Nom" class="RRM10">Guelmim Oued Nom</option>
+                                    <option value="Laâyoune_Sakia_El_Hamra" class="RRM11">Laâyoune Sakia El Hamra</option>
+                                    <option value="Dakhla-Oued_Ed-Dahab" class="RRM12">Dakhla-Oued Ed-Dahab</option>
+                                </select>
+                            </div>
+                            <textarea name="" id="" cols="30" rows="10" placeholder="Entrez vos messages" class="evm"></textarea>
+                            <div class="formContact3">
+                                <button type="submit">Envoyer maintenant</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer01">
+            <span class="textCopyright">Copyright 2023 - <a href="#" class="aDEANSUPMTI">DEAN SUPMTI</a></span>
+            <div class="lang">
+                <h2 class="textSelectLang">Sélectionnez une langue</h2>
+                <select name="langSelect" id="langSelect">
+                    <option value="en" class="en1">English</option>
+                    <option value="ar" class="ar1">Arabic</option>
+                    <option value="fr" class="fr1">Fransh</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js.js"></script>
+    <script src="./js/multiLang.js"></script>
+
+</body>
+</html>

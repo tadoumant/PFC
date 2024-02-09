@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afficher réclamation</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style2.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/0c6c59d6fe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+    <style>
+        body{
+          position: relative;
+        }
+        .actions{
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          align-items: center;
+          justify-content: space-around;
+          flex-wrap: wrap;
+        }
+        .actions a{
+          font-size: 11px;
+        }
+        /*  VUE */
+        .aa1VUE,.aa1TRAITER,.aa1ENATTENTE{
+          width: 100%;
+          height:100%;
+          background-color: rgba(0, 0, 0, 0.288);
+          position: absolute;
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          top: 0%;
+          left: 0%;
+        }
+        .aa1VUE1,.aa1TRAITER1,.aa1ENATTENTE1{
+          width: 60%;
+          height: 60%;
+          background-color: #fff;
+          border-radius: 20px;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+        .aa1VUE_01,.aa1TRAITER_01,.aa1ENATTENTE_01{
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .aa1VUE_01 h3 ,.aa1TRAITER_01 h3,.aa1ENATTENTE_01 h3{
+          font-size: 18px;
+          font-weight: 600;
+          color: #068843;
+          letter-spacing: 2px;
+        }
+        .aa1VUE_01  i ,.aa1TRAITER_01 i,.aa1ENATTENTE_01 i{
+          font-size: 20px;
+          font-weight: 700;
+          cursor: pointer;
+        }
+        /*  */
+        .aa1TRAITER{
+          display: none;
+        }
+        .aa1TRAITER.activeTraiter{
+          display: flex;
+        }
+        .aa1VUE{
+          display: none;
+        }
+        .aa1VUE.activeVue{
+          display: flex;
+        }
+        .aa1ENATTENTE{
+          display: none;
+        }
+        .aa1ENATTENTE.activeEnatt{
+          display: flex;
+        }
+        /*  */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header01">
+            <img src="../images/logo.svg" alt="" srcset="" width="65px">
+            <nav>
+                <div class="navLink01">
+                    <a href="./tabledebord.html">TABLE DE BORD</a>
+                    <a href="./showrecl.html" class="ac">AFFICHIER  REC</a>
+                </div>
+                <a href="./login.html" class="seConnectBTN" style="background-color: #068843;">SE DECONNECTER</a>
+            </nav>
+        </div>
+        <div class="header02">
+            <img src="../images/logo.svg" alt="" srcset="" width="65px">
+            <i class="uil uil-bars"></i>
+            <i class="uil uil-times"></i>
+            <nav>
+                <a href="./tabledebord.html">TABLE DE BORD</a>
+                <a href="./showrecl.html" class="ac">AFFICHIER  REC</a>
+                <a href="./login.html" class="seConnectBTN" style="background-color: #068843;">SE DECONNECTER</a>
+            </nav>
+        </div>
+    </header>
+    <!--  -->
+    <section class="app2AFF">
+        <div class="app2AFF01">
+            <h2>Afficher tout les réclamation</h2>
+            <div class="app2AFF01tab">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-wrap">
+                            <table class="table table-striped">
+                              <thead>
+                                <tr>
+                                  <th>Numéro de plainte</th>
+                                  <th>Régions du Royaume</th>
+                                  <th>Type de plainte</th>
+                                  <th>détails</th>
+                                  <th>Action</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row">1001</th>
+                                  <td>Mark Otto</td>
+                                  <td>Mark Otto</td>
+                                  <td><a href="#" class="btn btn-warning" onclick="warning(1)">VUE</a></td>
+                                  <td class="actions">
+                                    <a href="#" class="btn btn-success" onclick="traiter()">TRAITER</a>
+                                    <a href="#" class="btn btn-danger" onclick="enatt()">EN ATTENTE</a>
+                                  </td>
+                                </tr>
+    
+                                <tr>
+                                  <th scope="row">1001</th>
+                                  <td>Mark Otto</td>
+                                  <td>Mark Otto</td>
+                                  <td><a href="#" class="btn btn-warning" onclick="warning(2)">VUE</a></td>
+                                  <td class="actions">
+                                    <a href="#" class="btn btn-success" onclick="traiter()">TRAITER</a>
+                                    <a href="#" class="btn btn-danger" onclick="enatt()">EN ATTENTE</a>
+                                  </td>
+                                </tr>
+    
+                                <tr>
+                                  <th scope="row">1001</th>
+                                  <td>Mark Otto</td>
+                                  <td>Mark Otto</td>
+                                  <td><a href="#" class="btn btn-warning" onclick="warning(3)">VUE</a></td>
+                                  <td class="actions">
+                                    <a href="#" class="btn btn-success" onclick="traiter()">TRAITER</a>
+                                    <a href="#" class="btn btn-danger" onclick="enatt()">EN ATTENTE</a>
+                                  </td>
+                                </tr>
+    
+                                <tr>
+                                  <th scope="row">1001</th>
+                                  <td>Mark Otto</td>
+                                  <td>Mark Otto</td>
+                                  <td><a href="#" class="btn btn-warning" onclick="warning(4)">VUE</a></td>
+                                  <td class="actions">
+                                    <a href="#" class="btn btn-success" onclick="traiter()">TRAITER</a>
+                                    <a href="#" class="btn btn-danger" onclick="enatt()">EN ATTENTE</a>
+                                  </td>
+                                </tr>
+    
+                                 <tr>
+                                  <th scope="row">1001</th>
+                                  <td>Mark Otto</td>
+                                  <td>Mark Otto</td>
+                                  <td><a href="#" class="btn btn-warning" onclick="warning(5)">VUE</a></td>
+                                  <td class="actions">
+                                    <a href="#" class="btn btn-success" onclick="traiter()">TRAITER</a>
+                                    <a href="#" class="btn btn-danger" onclick="enatt()">EN ATTENTE</a>
+                                  </td>
+                                </tr>
+    
+                                 <tr>
+                                  <th scope="row">1001</th>
+                                  <td>Mark Otto</td>
+                                  <td>Mark Otto</td>
+                                  <td><a href="#" class="btn btn-warning" onclick="warning(6)">VUE</a></td>
+                                  <td class="actions">
+                                    <a href="#" class="btn btn-success" onclick="traiter()">TRAITER</a>
+                                    <a href="#" class="btn btn-danger" onclick="enatt()">EN ATTENTE</a>
+                                  </td>
+                                <tr>
+                                  <th scope="row">1001</th>
+                                  <td>Mark Otto</td>
+                                  <td>Mark Otto</td>
+                                  <td><a href="#" class="btn btn-warning" onclick="warning(7)">VUE</a></td>
+                                  <td class="actions">
+                                    <a href="#" class="btn btn-success" onclick="traiter()">TRAITER</a>
+                                    <a href="#" class="btn btn-danger" onclick="enatt()">EN ATTENTE</a>
+                                  </td>
+                                </tr>
+    
+                                <tr>
+                                  <th scope="row">1001</th>
+                                  <td>Mark Otto</td>
+                                  <td>Mark Otto</td>
+                                  <td><a href="#" class="btn btn-warning" onclick="warning(8)">VUE</a></td>
+                                  <td class="actions">
+                                    <a href="#" class="btn btn-success" onclick="traiter()">TRAITER</a>
+                                    <a href="#" class="btn btn-danger" onclick="enatt()">EN ATTENTE</a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  -->
+    <div class="aa1VUE">
+      <div class="aa1VUE1">
+          <div class="aa1VUE_01">
+              <h3>VUE</h3>
+              <i class="uil uil-multiply" onclick="warningIcon()"></i>
+          </div>
+      </div>
+    </div>
+    <!--  -->
+    <div class="aa1TRAITER">
+      <div class="aa1TRAITER1">
+          <div class="aa1TRAITER_01">
+              <h3>TRAITER</h3>
+              <i class="uil uil-multiply" onclick="traiterIcon()"></i>
+          </div>
+      </div>
+    </div>
+    <!--  -->
+    <div class="aa1ENATTENTE">
+      <div class="aa1ENATTENTE1">
+          <div class="aa1ENATTENTE_01">
+              <h3>EN ATTENTE</h3>
+              <i class="uil uil-multiply" onclick="enattIcon()"></i>
+          </div>
+      </div>
+    </div>
+
+    <script src="../js.js"></script>
+    <script src="../js2.js"></script>
+    <script>
+        // VUE 
+        const vueBox=document.querySelector('.aa1VUE');
+        const iconVueBox=document.querySelector('.aa1VUE .aa1VUE1 .aa1VUE_01 i');
+        const warning=(m)=>{
+          vueBox.classList.add('activeVue');
+        }
+        const warningIcon=()=>{
+          vueBox.classList.remove('activeVue');
+        }
+        // TRAITER
+        const traiterBox=document.querySelector('.aa1TRAITER');
+        const iconTraiterBox=document.querySelector('.aa1TRAITER .aa1TRAITER1 .aa1TRAITER_01 i');
+        const traiter=(m)=>{
+          traiterBox.classList.add('activeTraiter');
+        }
+        const traiterIcon=()=>{
+          traiterBox.classList.remove('activeTraiter');
+        }
+        // EN ATT
+        const enattBox=document.querySelector('.aa1ENATTENTE');
+        const iconEnattBox=document.querySelector('.aa1ENATTENTE .aa1ENATTENTE1 .aa1ENATTENTE_01 i');
+        const enatt=()=>{
+          enattBox.classList.add('activeEnatt');
+        }
+        const enattIcon=()=>{
+          enattBox.classList.remove('activeEnatt');
+        }
+    </script>
+</body>
+</html>
